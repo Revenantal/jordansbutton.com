@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+images/img/*
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -250,3 +251,44 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/images/img
+/images/img/TWINS.png
+/images/img/sweet_Jordo.jpg
+/images/img/sloth.jpg
+/images/img/sienfeld.jpg
+/images/img/Screen Shot 2011-10-26 at 1.41.01 PM.png
+/images/img/QueenJordan.jpg
+/images/img/pof-jordo.jpg
+/images/img/monkeying-around.jpg
+/images/img/jrony.jpg
+/images/img/Joyonce.jpg
+/images/img/jorpope.png
+/images/img/jorfabio.jpg
+/images/img/jordsniffer.jpg
+/images/img/JORDP.jpg
+/images/img/jordog.jpg
+/images/img/Jordo Bohama.jpg
+/images/img/jordlemore.jpg
+/images/img/jordicorn.jpg
+/images/img/jordan.gif
+/images/img/Jordan-Marc.jpg
+/images/img/jorcat.jpg
+/images/img/jorat.jpg
+/images/img/jor-dover.png
+/images/img/jor jor bigalo.jpg
+/images/img/joen.jpg
+/images/img/Jodie.jpg
+/images/img/jobunny.jpg
+/images/img/jigglet.jpg
+/images/img/j-tron.jpg
+/images/img/j-stew-biebs.jpg
+/images/img/irish-1.jpg
+/images/img/fantasyisland.jpg
+/images/img/date-jordo.jpg
+/images/img/crying jordan.jpg
+/images/img/biker-jor.jpg
+/images/img/Ben & Jordan.jpg
+/images/img/297783_10151258294401209_591737464_n.jpg
+/images/img/28011_10151357755866209_1900652357_n.jpg
+/images/img/247286_10150295160236209_5607292_n.jpg
+/images/img/156914_734691248597_1272489817_n.jpg

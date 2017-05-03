@@ -1,0 +1,176 @@
+<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<meta property="og:image" content="http://jordansbutton.com/img/face.png" />
+		<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+	
+    <body>
+	
+		<div class="cotaniner vertical-center main-background">
+			<div id="screen-1" style="width:100%;">
+				<div class="hand right-hand" id="right-hand"></div>
+				<div class="hand left-hand" id="left-hand"></div>
+				<div class="container text-center">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 content-background">
+							<div class="title-box">
+								<h1>CLICK THE BUTTON TO MAKE IT WORK<br><small>Seriously, Just click it.</small></h1>
+							</div>
+							<div class="content">
+								<button id="the-button">THE BUTTON</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="screen-2" style="width:100%; display:none;">
+				
+				<div class="the-face" id="the-face-left" style="display:none;"></div>
+				<div class="the-face" id="the-face-right" style="display:none;"></div>
+				<div id="faces"></div>
+				<div class="container text-center">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 content-background">
+							<div class="title-box">
+								<h1>IT NOW WORKS<br><small>GOOD JOB.</small></h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/vendor/jquery-easing.1.3.js"></script>
+		<script src="js/main.js"></script>
+		
+		<script>
+		
+		var lefthand = $( "#left-hand" );
+		var righthand = $( "#right-hand" );
+		var button = $( "#the-button" );
+		var buttonPOS = button.offset();
+		var screen = 1;
+
+		// Math stuff...
+		// + 10 in handWidth for padding... box-sizing didnt appear to be working...
+		var handWidth = ($( window ).width() / 2) - (button.width() + 10 / 2);
+		var handHeight = $( window ).height() - buttonPOS.top;
+		var buttonCalcTop = buttonPOS.top - (buttonPOS.top * 0.03);
+			
+
+		function loadScreen1() {
+			// Left hand
+			lefthand.width(handWidth);
+			lefthand.height(handHeight);
+			lefthand.css({'top': buttonCalcTop, 'left': -handWidth});
+			
+			// Right hand
+			righthand.width(handWidth);
+			righthand.height(handHeight);
+			righthand.css({'top': buttonCalcTop, 'right': -handWidth});
+			
+
+			lefthand.show();
+			righthand.show();
+			button.addClass("fade-in");
+			$(".title-box").addClass("fade-in");
+			// Animation Stuff
+			lefthand.animate({
+				left: '0px'
+			}, {duration: 3000, easing: 'easeInBounce'}); 
+			
+			righthand.animate({
+				right: '0px'
+			}, {duration: 3000, easing: 'easeInBounce'}); 
+			
+			animateLeftHand();
+			animateRightHand();
+		}
+			
+		//loop and animate hands	
+		function animateLeftHand() {
+			lefthand.animate({left: '-1%'}, 2000, function(){
+				lefthand.animate({left: '0'}, 2000, function(){
+					animateLeftHand();
+				});
+			});
+		}
+			
+		function animateRightHand() {
+			righthand.animate({right: '-1%'}, 2000, function(){
+				righthand.animate({right: '0'}, 2000, function(){
+					animateRightHand();
+				});
+			});
+		}
+		
+		function loadScreen2() {
+			var faceleft = $( "#the-face-left" );
+			var faceright = $( "#the-face-right" );
+			var screen = $( "#screen-2" );
+			screen.fadeIn(2000);
+			
+			faceleft.fadeIn(6000);
+			faceright.fadeIn(6000);
+		}
+		
+		$(document).ready(function() {
+		
+			loadScreen1();
+
+			button.click(function() {
+				$("#screen-1").fadeOut(1000);
+				setTimeout( function () {loadScreen2(); }, 1000 );
+				screen = 2;
+				
+			});
+			
+
+		});
+		$("#faces").click(function(event){
+				var faces = $( '#faces' );
+				var wWidth = $( window ).width()
+				var wHeight = $( window ).height()
+				var rotSpeed = 0;
+				var rotDirection = 0;
+				var litDirection = "rotate-right";
+				var left = 0;
+				var top = 0;
+				
+				rotSpeed = (Math.random() * 10) + 0.1;
+				rotDirection = Math.floor(Math.random() * 2) ;
+				left = Math.floor(Math.random() * wWidth);
+				top = Math.floor(Math.random() * wHeight);
+				
+				if (rotDirection == 0) {
+					litDirection = "rotate-left";
+				}		
+				faces.append("<div class='mini-face' style='top:" + top + "; left:" + left + "; animation-name:" + litDirection + ";  animation-duration:" + rotSpeed + "s;'></div>");
+		});
+		
+
+		</script>
+
+    </body>
+
+</html>

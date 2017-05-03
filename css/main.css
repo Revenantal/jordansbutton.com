@@ -1,0 +1,186 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body {
+	overflow: hidden;
+}
+  
+
+@font-face {
+  font-family: 'Chalk';
+  src: url('../fonts/chawp.otf');
+}
+   
+body {
+	color:#fff;
+	/* font-family: 'Cabin', sans-serif; */
+	font-family: 'Chalk', sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+}   
+
+h1 {
+	font-weight:600;
+}
+
+
+h1 small {
+	color:#9BC8E2;
+	overflow:
+}
+
+button {
+    background: #05639a;
+    padding: 10px 20px;
+    border: 2px solid;
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+button:hover {
+	background: #0980c5;
+	transition: background 1s;
+}
+
+#the-button {
+	opacity:0;
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.main-background {
+	background: #4485AD;  
+}
+
+.title-box {
+	padding-bottom:30px;
+	opacity:0;
+}
+
+.hand {
+	height: 100vh;
+    width: 50vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+	position:absolute;
+	display:none;
+}
+
+.left-hand {
+    background-image: url(../img/left-hand.png);
+	left:0px;
+	background-position:top right;
+}
+
+.right-hand {
+	background-image: url(../img/right-hand.png);
+	right:0px;
+	background-position:top left;
+}
+
+.fade-in {
+	-webkit-transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -ms-transition: opacity 3s ease-in-out;
+    -o-transition: opacity 3s ease-in-out;
+	opacity: 1;
+}
+
+#the-button.fade-in {
+	-webkit-transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -ms-transition: opacity 3s ease-in-out;
+    -o-transition: opacity 3s ease-in-out;
+	opacity: 1;
+}
+.title-box.fade-in {
+	-webkit-transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -ms-transition: opacity 3s ease-in-out;
+    -o-transition: opacity 3s ease-in-out;
+	opacity: 1;
+}
+
+.the-face {
+	position: absolute;
+    width: 50vw;
+    height: 100vh;
+	top:0px;
+    background-image: url(../img/face.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#the-face-left {
+    left: 0px;
+	animation-name: rotate-right; 
+    animation-duration: 10s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+#the-face-right {
+	right:0px;
+	animation-name: rotate-left; 
+    animation-duration: 10s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#faces {
+	width:100%;
+	height: 100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+#screen-2 * {
+	cursor:url(../img/face-cursor.png), auto;
+}
+
+.mini-face {
+	position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/face.png);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+	animation-name: rotate-right; 
+    animation-duration: 10s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+@keyframes rotate-right {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+@keyframes rotate-left {
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
+}
+
+
+
+
+
+
+
+
+
+
+
